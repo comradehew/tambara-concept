@@ -101,8 +101,8 @@ p{margin:0}
 .chap__m{letter-spacing:.08em;text-transform:none;font-weight:400;font-size:.9375rem}
 .on-dark .chap,.on-dark .chap__m{color:var(--on-forest-2)}.on-dark .chap__t{color:var(--on-forest)}.on-dark .chap__r{background:var(--rule-f1)}.on-dark .chap__n{color:#d9a27c}
 @media (max-width:640px){.chap{flex-wrap:wrap}.chap__m{flex-basis:100%;order:4}}
-.dinkus{display:block;width:72px;height:16px;margin:1.6em 0;color:var(--clay)}
-.dinkus path{fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round}
+.dinkus{display:block;width:64px;height:8px;margin:2em 0;color:var(--clay)}
+.dinkus circle{fill:currentColor}
 
 /* fade band: hero to letter, same story */
 .fadeband{height:clamp(7rem,22vh,14rem);background:linear-gradient(180deg,#141713 0%,var(--forest) 18%,#5a5b50 52%,var(--linen) 100%)}
@@ -392,7 +392,7 @@ details p{padding:0 0 1.6rem;color:var(--ink-2);max-width:60ch}
     <div class="letter__body">
       <p>Most people come for the hour: sixty minutes, seven metres from a family of mountain gorillas, after a walk that can take one hour or most of a morning.</p>
       <p>My work is everything around it. The right sector for your knees. A guide who stays with you for the whole journey. A vehicle no one else rides in. A lodge where you hear the forest at night.</p>
-      <svg class="dinkus" viewBox="0 0 72 16" aria-hidden="true"><path class="js-draw" d="M6 9c2-2 4-2 6 0"/><path class="js-draw" d="M33 9c2-2 4-2 6 0"/><path class="js-draw" d="M60 9c2-2 4-2 6 0"/></svg>
+      <svg class="dinkus" viewBox="0 0 64 8" aria-hidden="true"><circle cx="8" cy="4" r="2.6"/><circle cx="32" cy="4" r="2.6"/><circle cx="56" cy="4" r="2.6"/></svg>
       <p>I plan around forty journeys a year. Each one starts with a conversation, not a brochure.</p>
       <div class="sig">
         <svg viewBox="0 0 150 56" aria-hidden="true"><path class="js-draw" d="M6 40c6-14 12-27 16-29 3-1 2 7-1 14-3 6-6 9-4 10 4 1 12-11 15-10 2 1-2 7 0 8 3 1 7-6 9-6 2 0 0 6 2 6 3 0 6-9 10-14 2-3 3-1 1 4-3 8-6 14-4 15 3 1 8-6 11-8 2-1 2 3 4 3 4 0 9-7 14-8 4-1 2 6 5 6 5 0 12-5 20-7 7-2 14-2 22 0"/><path class="js-draw" d="M28 47c22-3 50-4 80-3"/></svg>
@@ -645,7 +645,6 @@ mm.add({motion:'(prefers-reduced-motion: no-preference)',desk:'(min-width: 900px
   gsap.fromTo('#fill',{scaleY:0},{scaleY:1,ease:'none',scrollTrigger:{trigger:'#days',start:'top 60%',end:'bottom 70%',scrub:true}});
   /* inked strokes */
   document.querySelectorAll('.js-draw').forEach(function(p){var L=p.getTotalLength?p.getTotalLength():200;gsap.set(p,{strokeDasharray:L,strokeDashoffset:L})});
-  gsap.to('.dinkus .js-draw',{strokeDashoffset:0,duration:.6,ease:'power2.out',stagger:.18,scrollTrigger:{trigger:'.dinkus',start:'top 85%',once:true}});
   gsap.to('.sig .js-draw',{strokeDashoffset:0,duration:2.4,ease:'power2.inOut',stagger:.5,scrollTrigger:{trigger:'.sig',start:'top 80%',once:true}});
   gsap.to('.kit .js-draw',{strokeDashoffset:0,duration:1.4,ease:'power2.inOut',stagger:.08,scrollTrigger:{trigger:'.kit',start:'top 80%',once:true}});
   document.querySelectorAll('.js-clip').forEach(function(el){gsap.fromTo(el,{clipPath:'inset(100% 0 0 0)'},{clipPath:'inset(0% 0 0 0)',duration:1.6,ease:E,scrollTrigger:{trigger:el,start:'top 78%',once:true}});gsap.fromTo(el.querySelector('img'),{scale:1.15},{scale:1,duration:2,ease:E,scrollTrigger:{trigger:el,start:'top 78%',once:true}})});
